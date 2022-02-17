@@ -1,0 +1,6 @@
+1. En el modelo server.js crear un path para la nueva ruta
+(  )
+2. Luego en la funcion route() definir la ruta haciendo require de la importacion por defecto en routes
+3. En el archivo routes/nombreDeLaRuta.js 
+4. Definir las rutas (POST, GET, PUT, DELETE) y llamar al controlador de esa ruta
+5. Crear el controlador de dicha ruta y definir la respuesta que va a tener el usuario
