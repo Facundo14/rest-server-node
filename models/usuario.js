@@ -20,7 +20,8 @@ const UsuarioSchema = Schema({
     rol: {
         type: String,
         required: [true, 'El rol es obligatorio'],
-        enum:['ADMIN_ROLE','USER_ROLE']
+        enum:['ADMIN_ROLE','USER_ROLE'],
+        default: 'USER_ROLE'
     },
     estado: {
         type: Boolean,
