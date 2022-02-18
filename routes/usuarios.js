@@ -21,7 +21,7 @@ const router = Router();
 
 router.get('/', [
     validarJWT,
-    tieneRole('ADMIN_ROLE', 'VENTAS_ROLE'),
+    tieneRole('ADMIN_ROLE', 'VENTAS_ROLE', 'USER_ROLE'),
     validarCampos
 ], ususariosGet);
 
