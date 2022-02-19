@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { cargarArchivo, actualizarImagen, mostrarImagen } = require('../controllers/uploads');
+const { cargarArchivo, actualizarImagen, mostrarImagen, actualizarImagenCloudinary } = require('../controllers/uploads');
 const { validarJWT, tieneRole, validarCampos, validarArchivoSubir } = require('../middlewares');
 const { coleccionesPermitidias } = require('../helpers');
 
@@ -23,7 +23,8 @@ router.put('/:coleccion/:id',[
     check('coleccion').custom(c => coleccionesPermitidias(c, ['usuarios','productos'])),
     tieneRole('ADMIN_ROLE', 'VENTAS_ROLE', 'USER_ROLE'),
     validarCampos
-],actualizarImagen);
+], actualizarImagenCloudinary);
+//],actualizarImagen); // Con esta funcion carga la imagen en el servidor
 
 router.get('/:coleccion/:id',[
     validarJWT,
